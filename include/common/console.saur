@@ -1,0 +1,11 @@
+@export @class Console
+  fun log(Any message) {
+    `console.log(message)`
+  }
+  fun error(Any message) {
+    `console.error('\x1b[31m%s\x1b[0m', message)`
+  }
+  fun warn(Any message) {
+    `console.warn('\x1b[33m%s\x1b[0m', message)`
+  }
+@endclass

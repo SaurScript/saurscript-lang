@@ -1,0 +1,14 @@
+@export @class Storage
+  fun getItem(String key) > String {
+    return `localStorage.getItem(key)`
+  }
+  fun setItem(String key, String value) {
+    `localStorage.setItem(key, value)`
+  }
+  fun removeItem(String key) {
+    `localStorage.removeItem(key)`
+  }
+  fun clear() {
+    `localStorage.clear()`
+  }
+@endclass

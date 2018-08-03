@@ -1,0 +1,7 @@
+fun newEntry(String word, Array<String> synonyms) > Dictionary<String:Array<String>> {
+  return @new Dictionary<String:Array<String>>(word, synonyms)
+}
+
+@class Thesaurus
+  @property Array<Any> entries = @new Array<Any>()
+@endclass

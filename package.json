@@ -1,0 +1,30 @@
+{
+  "name": "@saurscript/lang",
+  "version": "1.0.0",
+  "description": "A dead simple functional transpiled language for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "language",
+    "javascript",
+    "transpiler",
+    "functional"
+  ],
+  "author": "Carson Katri",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.3.1",
+    "prettyjson": "^1.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaurScript/saurscript-lang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SaurScript/saurscript-lang/issues"
+  },
+  "homepage": "https://github.com/SaurScript/saurscript-lang#readme"
+}
