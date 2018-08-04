@@ -1,4 +1,4 @@
-# `SaurScript`
+![SaurScript Banner](https://user-images.githubusercontent.com/13581484/43678453-9699496e-97e1-11e8-9825-63d416334f17.png)
 Dead-simple functional `JavaScript` transpiler.
 
 `SaurScript` looks like this:
