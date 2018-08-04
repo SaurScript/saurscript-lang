@@ -1,0 +1,14 @@
+@export @class Document
+  fun elementById(String id) > Any {
+    return `document.getElementById(id)`
+  }
+  fun elementsByClass(String class) > Any {
+    return `document.getElementsByClassName(class)`
+  }
+  fun elementsByTag(String tag) > Any {
+    return `document.getElementsByTagName(tag)`
+  }
+  fun elementsByName(String name) > Any {
+    return `document.getElementsByName(name)`
+  }
+@endclass

@@ -1,7 +1,4 @@
-fun newEntry(String word, Array<String> synonyms) > Dictionary<String:Array<String>> {
-  return @new Dictionary<String:Array<String>>(word, synonyms)
-}
+@import "common"
 
-@class Thesaurus
-  @property Array<Any> entries = @new Array<Any>()
-@endclass
+Array<String> val = strMatch("Hello World", "\\bHello\\b")
+logger.log(val)

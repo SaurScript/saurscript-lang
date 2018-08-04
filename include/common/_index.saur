@@ -1,2 +1,0 @@
-@import "./console"
-@export @new Console logger()

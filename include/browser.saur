@@ -1,8 +1,0 @@
-@import "./common/_index"
-@import "./browser/_index"
-
-@class Browser
-  @new Document document()
-@endclass
-
-@export @new Browser browser()

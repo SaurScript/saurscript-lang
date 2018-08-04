@@ -1,0 +1,5 @@
+@import "./document"
+@import "./storage"
+
+@export @new Document document()
+@export @new Storage storage()

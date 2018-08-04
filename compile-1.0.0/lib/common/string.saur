@@ -1,0 +1,31 @@
+fun strConcat(String first, String second) > String {
+  `return first + second`
+}
+
+fun strEqual(String first, String second) > Bool {
+  `return first == second`
+}
+
+fun strMatch(String str, String regex) > Array<String> {
+  `return str.match(new RegExp(regex))`
+}
+
+fun strSplit(String str, String separator) > Array<String> {
+  `return str.split(separator)`
+}
+
+fun strJoin(Array<String> strs, String separator) > String {
+  `return strs.join(separator)`
+}
+
+fun strCharAt(String str, Int index) > String {
+  `return str.charAt(index)`
+}
+
+fun strLen(String str) > Int {
+  `return str.length`
+}
+
+fun strReplace(String str, String substr, String newSubstr) > String {
+  `return str.replace(substr, newSubstr)`
+}
