@@ -1,5 +1,8 @@
-@import "common"
+const Lexer = require('./lexer/lexer');
+const AST = require('./ast/ast');
+const Transpiler = require('./transpiler/transpiler');
 
+let lex = new Lexer(`
 employees: Array = [["Ryan", 100.0], ["T-Rex", 50.0], ["Carson", 40.0], ["Cameron", 20.0]]
 fun getSalary(name: String) > Int {
   repeat employees.length {
@@ -14,4 +17,7 @@ fun getSalary(name: String) > Int {
 }
 
 salary: Int = getSalary("Cameron")
-console.log("Cameron's Salary: " + salary)
+console.log("Cameron's Salary: " + salary)`);
+let ast = new AST(lex.lex());
+let js = new Transpiler(ast.tree);
+console.log(js.compile());

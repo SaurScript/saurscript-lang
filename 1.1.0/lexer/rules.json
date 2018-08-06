@@ -1,0 +1,117 @@
+{
+  "version": "1.1.0",
+  "delimiters": {
+    "line": ["\n"],
+    "phrase": [" "]
+  },
+  "rules": [
+    {
+      "match": "^(\n|\\;)",
+      "type": "NEWLINE"
+    },
+    {
+      "match": "^\\s+",
+      "type": "WHITESPACE"
+    },
+    {
+      "match": "^fun",
+      "type": "FUNCTION"
+    },
+    {
+      "match": "^(if|elif|else)",
+      "type": "IF"
+    },
+    {
+      "match": "^(repeat)",
+      "type": "REPEAT"
+    },
+    {
+      "match": "^(with)",
+      "type": "REPEAT_WITH"
+    },
+    {
+      "match": "^return",
+      "type": "RETURN"
+    },
+    {
+      "match": "^\\{",
+      "type": "BRACE_OPEN"
+    },
+    {
+      "match": "^\\}",
+      "type": "BRACE_CLOSE"
+    },
+    {
+      "match": "^\\[",
+      "type": "BRACKET_OPEN"
+    },
+    {
+      "match": "^\\]",
+      "type": "BRACKET_CLOSE"
+    },
+    {
+      "match": "^:",
+      "type": "COLON"
+    },
+    {
+      "match": "^true|false",
+      "type": "BOOL_LITERAL"
+    },
+    {
+      "match": "^null|nil|undefined",
+      "type": "NULL_LITERAL"
+    },
+    {
+      "match": "^-?\\d+(?:\\.\\d+)?(?:e[+\\-]?\\d+)?",
+      "type": "NUMBER_LITERAL"
+    },
+    {
+      "match": "^\\\"(?:\\.|[^\\\"])*\\\"",
+      "type": "STRING_LITERAL_DQ"
+    },
+    {
+      "match": "^\\'(?:\\.|[^\\')])*\\'",
+      "type": "STRING_LITERAL_SQ"
+    },
+    {
+      "match": "^(Int|Float|String|Bool|Any|Array)",
+      "type": "TYPE"
+    },
+    {
+      "match": "^(\\+|\\-|\\*|\\/|\\%|\\>\\>\\>)",
+      "type": "OPERATOR"
+    },
+    {
+      "match": "^(\\<|\\>|\\=\\=|\\<\\=|\\>\\=|\\!\\=|and|or)",
+      "type": "COMPARATOR"
+    },
+    {
+      "match": "^class",
+      "type": "CLASS"
+    },
+    {
+      "match": "^\\=",
+      "type": "ASSIGN"
+    },
+    {
+      "match": "^\\(",
+      "type": "PAREN_OPEN"
+    },
+    {
+      "match": "^\\)",
+      "type": "PAREN_CLOSE"
+    },
+    {
+      "match": "^\\,",
+      "type": "COMMA"
+    },
+    {
+      "match": "^\\.",
+      "type": "DOT"
+    },
+    {
+      "match": "^\\w+(\\.\\w+)?",
+      "type": "ID"
+    }
+  ]
+}

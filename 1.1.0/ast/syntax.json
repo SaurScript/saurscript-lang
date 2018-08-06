@@ -1,0 +1,109 @@
+{
+  "version": "1.1.0",
+  "syntax": [
+    {
+      "type": "NEWLINE",
+      "parser": null
+    },
+    {
+      "type": "WHITESPACE",
+      "parser": null
+    },
+    {
+      "type": "FUNCTION",
+      "parser": "./syntax/fun"
+    },
+    {
+      "type": "IF",
+      "parser": "./syntax/if"
+    },
+    {
+      "type": "REPEAT",
+      "parser": "./syntax/repeat"
+    },
+    {
+      "type": "RETURN",
+      "parser": "./syntax/return"
+    },
+    {
+      "type": "BRACE_OPEN",
+      "parser": "./syntax/code-block"
+    },
+    {
+      "type": "BRACE_CLOSE",
+      "parser": null
+    },
+    {
+      "type": "BRACKET_OPEN",
+      "parser": "./syntax/literals/array"
+    },
+    {
+      "type": "BRACKET_CLOSE",
+      "parser": null
+    },
+    {
+      "type": "COLON",
+      "parser": null
+    },
+    {
+      "type": "NULL_LITERAL",
+      "parser": "./syntax/literals/null"
+    },
+    {
+      "type": "BOOL_LITERAL",
+      "parser": "./syntax/literals/bool"
+    },
+    {
+      "type": "NUMBER_LITERAL",
+      "parser": "./syntax/literals/number"
+    },
+    {
+      "type": "STRING_LITERAL_DQ",
+      "parser": "./syntax/literals/string"
+    },
+    {
+      "type": "STRING_LITERAL_SQ",
+      "parser": "./syntax/literals/string"
+    },
+    {
+      "type": "TYPE",
+      "parser": "./syntax/type"
+    },
+    {
+      "type": "OPERATOR",
+      "parser": "./syntax/operator"
+    },
+    {
+      "type": "COMPARATOR",
+      "parser": "./syntax/comparator"
+    },
+    {
+      "type": "CLASS",
+      "parser": "./syntax/class"
+    },
+    {
+      "type": "ASSIGN",
+      "parser": null
+    },
+    {
+      "type": "PAREN_OPEN",
+      "parser": null
+    },
+    {
+      "type": "PAREN_CLOSE",
+      "parser": null
+    },
+    {
+      "type": "COMMA",
+      "parser": null
+    },
+    {
+      "type": "DOT",
+      "parser": null
+    },
+    {
+      "type": "ID",
+      "parser": "./syntax/id"
+    }
+  ]
+}

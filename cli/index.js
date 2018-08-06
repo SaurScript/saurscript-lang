@@ -7,7 +7,7 @@ const {fork} = require('child_process');
 const colors = require('colors');
 const ora = require('ora');
 
-const defaultCompiler = '1.0.0';
+const defaultCompiler = '1.1.0';
 
 function error(msg) {
   console.log(msg.red.bold);
@@ -23,11 +23,11 @@ function success(msg) {
 }
 
 function info(msg) {
-  console.log(msg.blue);
+  console.log('['.gray + 'SaurScript'.magenta + ']'.gray, msg);
 }
 
 program
-.version('1.0.0')
+.version('1.1.0')
 .command('build <saurfile> <outfile> [compiler]')
 .action(function (file, outFile, compiler, cmd) {
   build(file, outFile, compiler);
@@ -48,15 +48,38 @@ function build(file, outFile, compiler) {
     compiler = defaultCompiler;
   }
   info('Locating compiler v' + compiler);
-  let compilerPath = path.resolve(__dirname + '/../compile-' + compiler + '/');
+  let compilerPath = path.resolve(__dirname + '/../' + compiler + '/');
   if (!fs.existsSync(compilerPath)) {
     error("Compiler v" + compiler + " is not installed or doesn't exist.");
   }
+  if (compiler == "1.0.0") {
+    buildLegacy(file, outFile, compiler);
+    return;
+  }
+  const Lexer = require('../' + compiler + '/lexer/lexer');
+  const AST = require('../' + compiler + '/ast/AST');
+  const Transpiler = require('../' + compiler + '/transpiler/transpiler');
+  info("Using compiler " + "v".magenta + compiler.magenta + " at " + compilerPath.gray);
+
+  // Read the saurfile:
+  if (!fs.existsSync(file)) {
+    error('\'.saur\' file \'' + file + '\' doesn\'t exist');
+  }
+  let code = fs.readFileSync(file, 'utf8');
+  info("Read \`.saur\' file");
+  let lex = new Lexer(code);
+  let tree = new AST(lex.lex());
+  let js = new Transpiler(tree);
+  fs.writeFileSync(outFile, js.compile());
+  success("Saved to " + outFile);
+}
+
+function buildLegacy(file, outFile, compiler) {
   const spinner = ora('Loading tokens|syntax-tree|transpile').start();
   spinner.color = 'blue';
-  const Tokens = require('../compile-' + compiler + '/tokens');
-  const SyntaxTree = require('../compile-' + compiler + '/syntax-tree');
-  const Transpile = require('../compile-' + compiler + '/transpile');
+  const Tokens = require('../' + compiler + '/tokens');
+  const SyntaxTree = require('../' + compiler + '/syntax-tree');
+  const Transpile = require('../' + compiler + '/transpile');
   spinner.stop();
   success("Using compiler v" + compiler + " at " + compilerPath);
 
