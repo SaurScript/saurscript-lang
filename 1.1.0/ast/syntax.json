@@ -10,6 +10,18 @@
       "parser": null
     },
     {
+      "type": "IMPORT",
+      "parser": "./syntax/imports"
+    },
+    {
+      "type": "CLASS",
+      "parser": "./syntax/class"
+    },
+    {
+      "type": "CLASS_INSTANCE",
+      "parser": "./syntax/class"
+    },
+    {
       "type": "FUNCTION",
       "parser": "./syntax/fun"
     },

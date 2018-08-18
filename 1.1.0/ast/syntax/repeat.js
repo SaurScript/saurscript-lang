@@ -31,6 +31,9 @@ module.exports = (peek, consume, peekBack, recall, nextLine, parse) => {
     consume();
   } while ((peek()||{type:null}).type == "NEWLINE");
   consume();
+  do {
+    consume();
+  } while ((peek()||{type:null}).type == "NEWLINE");
 
   // We can iterate an array by using `with`. This is the equivalent to doing `for (let item in array)`
   if ((peek()||{type:null}).type == "REPEAT_WITH") {

@@ -1,0 +1,7 @@
+@import "./browser/page.saur"
+@import "./browser/storage.saur"
+
+@export Page
+
+storage: Storage = new Storage()
+@export storage

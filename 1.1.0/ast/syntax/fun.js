@@ -27,7 +27,15 @@ module.exports = (peek, consume, peekBack, recall, nextLine, parse) => {
       if (peek().type != "TYPE")
         err(`Expected type but got '${peek().type}'`);
       arg.type = consume().value;
+
+      if ((peek()||{type:null}).type == "ASSIGN") {
+        consume();
+        arg.default = parse(peek());
+      }
+
       fun.args.push(arg);
+      if ((peek()||{type:null}).type == "COMMA")
+        consume();
     } while (peek().type != "PAREN_CLOSE");
   }
   consume();

@@ -1,0 +1,11 @@
+@import "common"
+
+class MyClass {
+  fun init() {
+    return [["property", 100], ["property2", 200]]
+  }
+}
+
+fun appLoop() {
+  
+}

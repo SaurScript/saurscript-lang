@@ -1,0 +1,31 @@
+@import "common"
+
+class Employee {
+  fun constructor(name: String, salary: Float) {
+    return [["name", name], ["salary", salary]]
+  }
+}
+
+employees: Array = [["Ryan", 100.0], ["T-Rex", 50.0], ["Carson", 40.0], ["Cameron", 20.0]]
+
+// Using repeat
+fun getSalary(name: String) > Int {
+  repeat employees.length {
+    if employees[employee][0] == name {
+      return employees[employee][1]
+    }
+  } with employee
+}
+
+// Using recursion
+fun getSalaryRec(name: String, i: Int = 0) > Int {
+  println(employees[i])
+  if employees[i][0] == name {
+    return employees[i][1]
+  } else {
+    return getSalaryRec(name, i + 1)
+  }
+}
+
+salary: Int = getSalaryRec("Cameron")
+println("Cameron's Salary: " + salary)

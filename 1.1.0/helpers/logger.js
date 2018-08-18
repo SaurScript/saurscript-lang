@@ -5,12 +5,12 @@ function timestamp() {
   let date = new Date();
   return '['.gray + ((date.getHours() % 12) + ':' + date.getMinutes() + ':' + date.getSeconds()).magenta + ']'.gray;
 }*/
-prefix = "[".gray + "saur".magenta + "]".gray;
+prefix = "[" + "saur".gray + "]";
 
 module.exports = {
   setPrefix: function(str, intensity) {
     let colored = intensity == 0 ? str.yellow : intensity == 1 ? str.green : str.green.bold;
-    prefix = "[".gray + colored + "]".gray;
+    prefix = "[" + str.gray + "]";
   },
   log: function(msg) {
     console.log(prefix, msg);

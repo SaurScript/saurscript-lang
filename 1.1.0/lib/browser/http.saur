@@ -1,0 +1,6 @@
+fun HttpGET(url: String, callback: Any) {
+  request: Any = new XMLHttpRequest();
+  request.addEventListener("load", callback)
+  request.open("GET", url)
+  request.send()
+}

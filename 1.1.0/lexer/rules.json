@@ -10,8 +10,28 @@
       "type": "NEWLINE"
     },
     {
+      "match": "^\\/\\/.*",
+      "type": "COMMENT"
+    },
+    {
       "match": "^\\s+",
       "type": "WHITESPACE"
+    },
+    {
+      "match": "^\\@import",
+      "type": "IMPORT"
+    },
+    {
+      "match": "^class",
+      "type": "CLASS"
+    },
+    {
+      "match": "^new",
+      "type": "CLASS_INSTANCE"
+    },
+    {
+      "match": "^loop",
+      "type": "MAIN_LOOP"
     },
     {
       "match": "^fun",

@@ -1,0 +1,15 @@
+class Page {
+  // The HTML code
+  html: String
+
+  // Template is an array of tuples (a dictionary of sort)
+  // It looks like this:
+  // [["title", "Hello World"], ["description", "This is an example app"]]
+  // This will look for any {{title}} and {{description}} tags in the HTML and replace it
+  fun render(template: Any, soFar: String = "", i: Int = 0) > String {
+    if (i < template.length) {
+      replaced: String = html.replace(template[i][0], tempalte[i][1])
+      return render(template, replaced, i + 1)
+    }
+  }
+}

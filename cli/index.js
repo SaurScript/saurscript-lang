@@ -9,6 +9,8 @@ const ora = require('ora');
 
 const defaultCompiler = '1.1.0';
 
+const appLoop = `if (appLoop) { let loopParams = []; setInterval(_ => { appLoop().apply(this, loopParams); }, 0.1); }`;
+
 function error(msg) {
   console.log(msg.red.bold);
   process.exit();
@@ -69,8 +71,8 @@ function build(file, outFile, compiler) {
   info("Read \`.saur\' file");
   let lex = new Lexer(code);
   let tree = new AST(lex.lex());
-  let js = new Transpiler(tree);
-  fs.writeFileSync(outFile, js.compile());
+  let js = new Transpiler(tree.tree);
+  fs.writeFileSync(outFile, js.compile() + appLoop);
   success("Saved to " + outFile);
 }
 

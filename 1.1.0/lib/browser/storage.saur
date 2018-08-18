@@ -1,0 +1,8 @@
+class Storage {
+  fun getItem(key: String) > String {
+    return localStorage.getItem(key)
+  }
+  fun setItem(key: String, value: String) {
+    localStorage.setItem(key, value)
+  }
+}

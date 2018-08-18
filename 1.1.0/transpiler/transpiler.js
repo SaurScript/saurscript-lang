@@ -23,6 +23,7 @@ class Transpiler {
         if (parserFile.transpiler) {
           const parser = require(parserFile.transpiler);
           code += parser(statement);
+          code += '\n';
         } else {
           err(`No transpiler found for statement of type '${statement.type}'`);
         }

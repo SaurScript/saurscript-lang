@@ -1,0 +1,32 @@
+@import "common"
+@import "browser"
+
+fun makeTitle(todos: Array) > String {
+  return todos.length + " Todos\n----------"
+}
+
+// All functions in SaurScript are curried.
+// This will compile to something like:
+// const drawTodos = title => todos => { console.log(title); console.log(todos); }
+fun drawTodos(title: String, todos: Array) {
+  println(title)
+  repeat todos.length {
+    println(todos[i])
+  } with i
+  println("\n\n")
+}
+
+// `appLoop` is used for the main app loop
+// This loop takes the todo list, and a draw command
+// `<<<` will pipe the value of `makeTitle` into the draw function's params
+// We pass in `1` because it's the 2nd parameter of the draw function.
+fun appLoop(data: Array = ["Task 1", "Task 2", "Task 3"], draw: Any = drawTodos) {
+  // Because drawTodos is curried, this call will compile to something like:
+  // draw(title)(data)
+  //draw(data) <<< makeTitle(data)(1)
+  title: String = makeTitle(data)
+  draw(title, data)
+
+  // This array is what is used as the params of the next loop iteration
+  return [data, draw]
+}
